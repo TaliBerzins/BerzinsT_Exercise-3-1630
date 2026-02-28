@@ -61,13 +61,9 @@ Console.WriteLine("Intensity      Max Heart Rate\n");
 // Loop from 50% to 95% increasing by 5%
 for (int intensity = 50; intensity <= 95; intensity += 5)
 {
-    double intensityPercent = intensity / 100.0;
 
-    // Step 3: Maximum Target Zone
-    double mtz = hrr * intensityPercent;
-
-    // Step 4: Target Training Zone
-    double ttz = mtz + restingHeartRate;
+    //  Target Training Zone
+    double ttz = (intensity/ 100.0) * ((220-age) - restingHeartRate)+restingHeartRate;
 
     Console.WriteLine($"{intensity}%     --      {Math.Round(ttz)} ");
 }
